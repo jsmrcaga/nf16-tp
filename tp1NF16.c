@@ -119,20 +119,30 @@ void main(){
 //2.3
 void main(){
 	int table, i;
-	printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
+	printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ? ");
 	scanf("%d", &table);
 
-	while(table != 0){
 
-		for(i=0; i<10; i++){
-			printf("%d\n", (i+1)*table);
+	while(table != 0){
+		if (table>0 || table<10){
+
+			for(i=0; i<10; i++){
+				printf("%d\n", (i+1)*table);
+			}
+
+			printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
+			scanf("%d", &table);
+			
+		}else{
+			printf("ce n'est pas dans les possibilités du programme, recommencez !\n");
+			printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
+			scanf("%d", &table);
 		}
 
-		printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
-		scanf("%d", &table);
 
 	}
 
+	printf("Vous etes sorti! :(");
 
 
 }
