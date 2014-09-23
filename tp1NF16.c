@@ -104,7 +104,7 @@ void main(){
 	int i=0;
 	scanf("%d", &plep[0]);
 	while(plep[i] != -1){
-		
+		poulet;
 	}
 
 
