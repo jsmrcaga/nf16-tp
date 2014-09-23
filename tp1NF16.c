@@ -1,0 +1,111 @@
+//1.1
+void main(){
+	float a, b;
+	printf("Entrez deux numeros: ");
+	scanf("%f%f", &a, &b);
+	printf("\nNumeros entres: %f , %f\n", a, b);
+	a+=b;
+	printf("Somme: ", a);
+}
+
+//1.2
+void main(){
+	float a, b;
+	printf("Entrez deux numeros: ");
+	scanf("%f%f", &a, &b);
+	printf("\nNumeros entres: %f , %f\n", a, b);
+	float c= a;
+	a=b; b=c;
+	printf("\nNumeros entres: %f , %f\n", a, b);
+
+}
+
+//1.3
+void main(){
+	float pourc, y;
+	printf("Entrez le nombre et ensuite le pourcentage a calculer: ");
+	scanf("%f%f",&y , &pourc);
+	pourc /= 100;
+	pourc *= y;
+	printf("Resultat: %f", pourc);
+
+}
+
+//1.4
+void main(){
+	float farenh;
+	printf("Entrez la temp en F: ");
+	scanf("%f", &farenh);
+	farenh = (5/9) * (farenh - 32);
+	printf("T en C: %f", farenh);
+}
+
+//1.5
+void main(){
+	int entier;
+	float decimal;
+
+	printf("Entrez un nombre: ");
+	scanf("%d", &entier);
+	decimal = (float) entier;
+	printf("Decimal: %f\n", decimal);
+	printf("Octal :%o\n", entier);
+	printf("Hexa %x\n", entier); 
+
+
+}
+
+//1.6
+void main(){
+	int a;
+	printf("Entrez entier: ");
+	scanf("%d", &a);
+
+	if(a==0){
+		printf("Valeur Nulle\n");
+	}
+
+	if(a%2 == 0){
+		printf("Nombre pair!\n");
+	}else{
+		printf("Nombre impair!\n");
+	}
+
+}
+
+//1.7
+void main(){
+	char c = '5';
+	int i = (int) c;
+	
+
+}
+
+//EXERCICE 2
+void main(){
+	char c;
+	printf("Entrez un caractere: ");
+	scanf("%c", &c);
+
+	if(c>=48 || c<= 57){
+		printf("Nombre");
+	}elseif(c>=48 || c<= 57){
+		printf("Majuscule");
+	}elseif(c>=97 || c<= 122){
+		printf("Minuscule");
+	}else{
+
+	}
+
+}
+
+void main(){
+	int plep[1000];
+	int i=0;
+	scanf("%d", &plep[0]);
+	while(plep[i] != -1){
+		
+	}
+
+
+}
