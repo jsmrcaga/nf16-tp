@@ -149,8 +149,19 @@ void main(){
 
 //2.4
 void main(){
-	char c;
-	getchar();
-
+	int c =	getchar();
+	switch(c){
+		case '1':
+			printf("Un\n");
+			break;
+		case '2':
+			printf("Deux\n");
+			break;
+		case '3':
+			printf("Trois\n");
+			break;
+		default:
+			printf("autre caractere");
+	}		
 
 }
