@@ -124,7 +124,7 @@ void main(){
 
 
 	while(table != 0){
-		if (table>0 || table<10){
+		if (table>0 && table<10){
 
 			for(i=0; i<10; i++){
 				printf("%d\n", (i+1)*table);
@@ -143,6 +143,14 @@ void main(){
 	}
 
 	printf("Vous etes sorti! :(");
+
+
+}
+
+//2.4
+void main(){
+	char c;
+	getchar();
 
 
 }
