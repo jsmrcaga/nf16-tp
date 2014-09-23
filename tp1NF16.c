@@ -165,3 +165,45 @@ void main(){
 	}		
 
 }
+
+// EXERCICE 3
+
+// 3.1
+void main(){
+	
+	int tab[10];
+	int i;
+	for(i=0; i<10; i++){
+		tab[i]=0;
+	}
+
+}
+
+//3.2
+void main(){
+	int tab[5];
+	int i;
+	for(i=0; i<5; i++){
+		tab[i]=5-i;
+	}	
+}
+
+//3.3
+void main(){
+	int tab[3][4];
+	int i, j=0;
+
+	for (j=0; j<4; j++){
+
+		for(i=0; i<3; i++){
+			tab[i][j]=i+12;
+		}	
+	}
+
+	for (j=0; j<4; j++){
+
+		for(i=0; i<3; i++){
+			printf("%d",tab[i][j]);
+		}	
+	}	
+}
