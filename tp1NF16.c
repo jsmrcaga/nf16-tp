@@ -82,6 +82,7 @@ void main(){
 }
 
 //EXERCICE 2
+//2.1
 void main(){
 	char c;
 	printf("Entrez un caractere: ");
@@ -99,13 +100,39 @@ void main(){
 
 }
 
+//2.2
 void main(){
+
 	int plep[1000];
 	int i=0;
-	scanf("%d", &plep[0]);
+	scanf("%d", &plep[i]);
+	
 	while(plep[i] != -1){
-		poulet;
+		i++;
+		scanf("%d", &plep[i]);
 	}
+
+
+}
+
+
+//2.3
+void main(){
+	int table, i;
+	printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
+	scanf("%d", &table);
+
+	while(table != 0){
+
+		for(i=0; i<10; i++){
+			printf("%d\n", (i+1)*table);
+		}
+
+		printf("Quelle table de multiplication voulez-vous, tapez 0 (zéro) pour sortir ?");
+		scanf("%d", &table);
+
+	}
+
 
 
 }
