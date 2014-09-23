@@ -193,14 +193,14 @@ void main(){
 	int tab[3][4];
 	int i, j=0;
 
-	for (j=0; j<4; j++){
+	for (j=0; j<3; j++){
 
-		for(i=0; i<3; i++){
+		for(i=0; i<4; i++){
 			if(j==0){
 				tab[i][j]=i+12;
-			}elseif(j==1){
+			}else if(j==1){
 				tab[i][j]=i+16;
-			}elseif(j==2){
+			}else if(j==2){
 				tab[i][j]=i+20;
 			}
 		}	
@@ -209,7 +209,7 @@ void main(){
 	for (j=0; j<4; j++){
 
 		for(i=0; i<3; i++){
-			printf("%d",tab[i][j]);
+			printf("%d ",tab[i][j]);
 		}	
 		printf("\n");
 	}	
