@@ -10,6 +10,7 @@ typedef struct{
 	int dureeMoy_min;
 } t_jeu;
 
+int plep(int*, void, char[]);
 
 void main(){
 
@@ -19,14 +20,15 @@ int ajouter_jeu(t_ludotheque* ludo, t_jeu* jeu){
 	int i;
 
 	t_jeu debutLudo = ludo->debut;
-
+	printf("DEBUG: debutLudo1 %s\n", debutLudo);
 	for(i=0; i<(ludo->nb_jeu); i++){
 		ludo->debut = ludo->debut->suivant;
 	}
-
+	printf("DEBUG: debutLudo2 %s\n", debutLudo);
+	
 	ludo->debut->suivant = jeu;
 	ludo->debut = debutLudo; 
-
+	
 	//verif
 	int wasAdded = 0; //0 false 1 true
 	for(i = 0; i<(ludo->nb_jeu)+1; i++){
