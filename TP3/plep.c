@@ -24,11 +24,11 @@ int ajouter_jeu(t_ludotheque* ludo, t_jeu* jeu){
 	}else{
 
 		t_jeu *debutLudo = ludo->debut;
-		printf("DEBUG: debutLudo1 %s\n", debutLudo);
+		printf("DEBUG: debutLudo1 %s\n", debutLudo->nom);
 		for(i=0; i<(ludo->nb_jeu); i++){
 			ludo->debut = ludo->debut->suivant;
 		}
-		printf("DEBUG: debutLudo2 %s\n", debutLudo);
+		printf("DEBUG: debutLudo2 %s\n", debutLudo->nom);
 
 		ludo->debut->suivant = jeu;
 		ludo->debut = debutLudo; 
