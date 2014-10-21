@@ -50,6 +50,7 @@ int ajouter_jeu(t_ludotheque* ludo, t_jeu* jeu){
 	if(wasAdded==1){
 
 		ludo->nb_jeu++;
+		printf("DEBUG: nombre jeus: %d\n", ludo->nb_jeu);
 		return 1;
 	}else{
 		return 0;
