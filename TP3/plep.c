@@ -18,7 +18,7 @@ void main(){
 
 int ajouter_jeu(t_ludotheque* ludo, t_jeu* jeu){
 	int i;
-
+	printf("DEBUG: INIT AJOUT\n");
 	if(ludo->debut == NULL){
 		ludo->debut = jeu;	
 	}else{
