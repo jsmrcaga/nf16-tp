@@ -96,7 +96,7 @@ int ajouter_noeud(ArbreBR *arbre, NoeudABR *noeud){
 
 		if (temp->filsGauche == NULL && temp->filsDroit == NULL){
 				temp->filsDroit = noeud; //on met le premier a droite
-
+				// /PLEP
 		}else if (temp->filsGauche == NULL && temp->filsDroit != NULL && strcmp(noeud->mot, temp->filsDroit->mot) <= 0 ){
 				temp->filsGauche = noeud;
 
