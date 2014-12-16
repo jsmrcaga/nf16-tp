@@ -84,11 +84,44 @@ ArbreBR * creer_ARB(){
 int ajouter_noeud(ArbreBR *arbre, NoeudABR *noeud){
 	NoeudABR * temp = (NoeudABR*)(malloc(sizeof(NoeudABR)))
 	temp = arbre -> racine;
+	int nbMots = arbre->nb_mots_total , i;
+
 	if (temp == NULL){
 		temp = noeud;
 	}else{
+		//TODO
+			// Check nullite des enfants
+			//
+		ArbreBR * nouvelArbre = (ArbreBR*)(malloc(sizeof(ArbreBR)));
 
+		if (temp->filsGauche == NULL && temp->filsDroit == NULL){
+				temp->filsDroit = noeud; //on met le premier a droite
+
+		}else if (temp->filsGauche == NULL && temp->filsDroit != NULL && strcmp(noeud->mot, temp->filsDroit->mot) <= 0 ){
+				temp->filsGauche = noeud;
+
+		}else if (temp->filsGauche == NULL && temp->filsDroit != NULL && strcmp(noeud->mot, temp->filsDroit->mot) > 0 ){
+				nouvelArbre->racine = temp->filsDroit;
+				ajouter_noeud(nouvelArbre, noeud);
+
+		}else if(temp->filsGauche != NULL && temp->filsDroit == NULL && strcmp(noeud->mot, temp->filsGauche->mot) <= 0 ){
+				nouvelArbre->racine = temp->filsGauche;
+				ajouter_noeud(nouvelArbre, noeud);
+
+		}else if(temp->filsGauche != NULL && temp->filsDroit == NULL && strcmp(noeud->mot, temp->filsGauche->mot) > 0 ){
+				temp -> filsDroit = noeud;
 		
+		}else if(temp->filsGauche != NULL && temp-> filsDroit != NULL){
+
+				if (strcmp(noeud->mot, temp->filsGauche->mot) <= 0 ){
+					nouvelArbre->racine = temp -> filsGauche;
+					ajouter_noeud(nouvelArbre, noeud);
+				}else{
+					nouvelArbre->racine = temp -> filsDroit;
+					ajouter_noeud(nouvelArbre, noeud);
+				}
+		}
+					
 
 	}
 	return 1;
