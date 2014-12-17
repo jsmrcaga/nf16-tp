@@ -82,7 +82,7 @@ ArbreBR * creer_ARB(){
 }
 
 int ajouter_noeud(ArbreBR *arbre, NoeudABR *noeud){
-	NoeudABR * temp = (NoeudABR*)(malloc(sizeof(NoeudABR)))
+	NoeudABR * temp = (NoeudABR*)(malloc(sizeof(NoeudABR)));
 	temp = arbre -> racine;
 	int nbMots = arbre->nb_mots_total , i;
 
