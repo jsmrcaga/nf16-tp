@@ -130,6 +130,13 @@ int ajouter_noeud(ArbreBR *arbre, NoeudABR *noeud){
 
 
 
+int * compterProfondeur (NoeudABR *noeud){
+	//Passer la racine de l'arbre
+	int profGauche, profDroite;
+	NoeudABR * temp = (NoeudABR*)(malloc(sizeof(NoeudABR)));
+	temp = noeud.
+
+}
 
 
 
@@ -138,18 +145,106 @@ int ajouter_noeud(ArbreBR *arbre, NoeudABR *noeud){
 
 
 
+int charger_fichier(ArbreBR * arbre, char *filename){
+	int nombre_mots;
+    printf("pouet");
+    FILE* fichier = NULL;
+	char chaine[TAILLE_MAX] = ""; //TAILLEMAX = 1000
+    fichier = fopen(filename, "r");
+	if (fichier != NULL){
+   	 printf("pouet2");
+    	while (fgets(chaine, TAILLE_MAX, fichier) != NULL) // On lit le fichier tant qu'on ne reçoit pas d'erreur (NULL)
+    	{
+        	printf("%s", chaine); // On affiche la chaîne qu'on vient de lire
+    	}
+
+    	fclose(fichier);
+	}
+
+	return 0;
+}
 
 
 
 
+int motExiste (char* mot, NoeudABR * noeud){
+	NoeudABR * temp = (NoeudABR*)malloc(sizeof(NoeudABR));
+	temp=noeud;
+	if (strcmp(temp->mot, mot) == 0){
+		return 1; //mot existe deja
+	}
+	//test a gauche
+	if (temp-> filsGauche != NULL){
+		if(strcmp(temp->filsGauche->mot, mot) == 0){
+			return 1;
+		}else{
+			if(motExiste (mot, temp->filsGauche) == 1)
+				return 1;			
+		}
+	}
+
+	//test a droite
+	if (temp-> filsDroit != NULL){
+		if(strcmp(temp->filsDroit->mot, mot) == 0){
+			return 1;
+		}else{
+			if(motExiste (mot, temp->filsDroit) == 1)
+				return 1;			
+		}
+	}
+	return 0;
+}
+
+NoeudABR* rechercheNoeud (char* mot, ArbreBR * arbre){
+	NoeudABR * temp = (NoeudABR*)malloc(sizeof(NoeudABR));
+	ArbreBR * tempABR = (ArbreBR*)malloc(sizeof(ArbreBR));
+	temp=arbre->racine;
+
+	if (strcmp(temp->mot, mot) == 0){
+		return temp; //mot existe deja
+	}
+	//test a gauche
+	if (temp-> filsGauche != NULL){
+		if(strcmp(temp->filsGauche->mot, mot) == 0){
+			return temp->filsGauche;
+		}else{
+			tempABR->racine = temp->filsGauche;
+			if(rechercheNoeud (mot, tempABR) != NULL)
+				return rechercheNoeud (mot, tempABR);			
+		}
+	}
+
+	//test a droite
+	if (temp-> filsDroit != NULL){
+		if(strcmp(temp->filsDroit->mot, mot) == 0){
+			return temp->filsDroit;
+		}else{
+			tempABR->racine = temp->filsDroit;
+			if(rechercheNoeud (mot, tempABR) != NULL)
+				return rechercheNoeud (mot, tempABR);			
+		}
+	}
+	return NULL;
+}
 
 
 
+void afficherArbre (ArbreBR * arbre){
+	NoeudABR* temp = (NoeudABR*)malloc(sizeof(NoeudABR));
+	ArbreBR * tempABR = (ArbreBR*)malloc(sizeof(ArbreBR));
+	temp = arbre->racine;
+	if (temp->filsGauche != NULL){
+		tempABR->racine = temp->filsGauche;
+		afficherArbre(tempABR);
+	}
+	//Entre gauche et droite pour l'ordre alphabetique
+	printf(" -*- $s", temp->mot);
 
-
-
-
-
+	if (temp->filsDroit != NULL){
+		tempABR->racine = temp->filsDroit;
+		afficherArbre(tempABR);
+	}
+}
 
 void main(){
 	ListePosition * poulet = creer_liste_position();
