@@ -214,3 +214,38 @@ void main(){
 		printf("\n");
 	}	
 }
+
+//4.5
+#include <stdio.h>
+
+int main(){
+	int tab[3][4];
+
+	int *p;
+
+	
+	int i;
+	int j;
+	p=&tab[0][0];
+	
+
+	for (i=0; i<12; i++){
+		*(p+i) = i+12;
+		if (!i%4 && i!=0){
+			p++;
+			printf("\n");
+		}
+		printf("%d\n", *(p+i));
+	}
+
+	i=0;
+	j=0;
+	for (i=0; i<3; i++ ){
+		for (j=0; j<4; j++ ){
+			printf("tab[%d][%d]: %d",i, j, tab[i][j]);
+		}	
+		printf("\n");
+	}	
+
+	return 0;
+}
